@@ -53,10 +53,11 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 .quote-btn:hover {
   background-color: #f59e0b;
+  transform: translateY(-2px);
 }
 
 /* Navigation styles */
@@ -67,7 +68,6 @@ h1 {
 .nav ul {
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
 }
 .nav li {
   margin: 0;
@@ -99,6 +99,9 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   position: relative;
   margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
 }
 .floating-quote-btn {
   position: absolute;
@@ -114,8 +117,8 @@ h1 {
   gap: 0.5rem;
   font-size: 0.9rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: background-color 0.3s, transform 0.2s;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 .floating-quote-btn:hover {
   background-color: #059669;
@@ -125,10 +128,14 @@ h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #222;
+  text-align: center;
 }
 p {
   font-size: 1rem;
   color: #555;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
 }
 
 /* Grid component styles */
@@ -145,6 +152,9 @@ p {
   aspect-ratio: 4 / 3;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
 }
 .grid-item:hover {
   transform: scale(1.02);
@@ -201,6 +211,9 @@ p {
   margin-top: 3rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
 }
 .services-title {
   text-align: center;
@@ -230,6 +243,10 @@ p {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.2s;
 }
 .service_item:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -258,15 +275,34 @@ p {
   text-decoration: underline;
 }
 
-/* Modal Styles */
+/* Modal styles with fade-in animation and center positioning */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .modal {
-  display: none;
+  display: flex; /* changed from none to flex for animation control */
+  opacity: 0;
+  pointer-events: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.4);
   justify-content: center;
   align-items: center;
+  padding: 2rem;
+  transition: opacity 0.3s ease;
   z-index: 1000;
+}
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 .modal-content {
   background: #fff;
@@ -274,9 +310,12 @@ p {
   max-width: 600px;
   width: 90%;
   border-radius: 8px;
-  position: relative;
   max-height: 90vh;
   overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 0.5s forwards;
 }
 .close {
   position: absolute;
