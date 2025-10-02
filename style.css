@@ -5,11 +5,13 @@
   padding: 0;
 }
 
+/* Body styling with a dark background for neon effect */
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #fafafa;
+  background-color: #0d0d0d; /* Dark background for neon glow */
+  color: #eee;
+  overflow-x: hidden;
 }
 
 /* Container for consistent padding */
@@ -19,12 +21,23 @@ body {
   padding: 1rem;
 }
 
-/* Header styles */
+/* Neon glow effect keyframes */
+@keyframes neon-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
+  }
+}
+
+/* Header styles with neon accents */
 .header {
-  background-color: #1e3a8a; /* Deep blue */
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
   padding: 1rem 0;
-  color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px #0ff;
+  animation: neon-glow 1.5s infinite alternate;
+  position: relative;
 }
 .header-content {
   display: flex;
@@ -35,17 +48,23 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  color: #fff;
 }
 .logo i {
   font-size: 2rem;
+  color: #0ff; /* Neon cyan for icon */
+  animation: neon-glow 1.5s infinite alternate;
 }
 h1 {
   font-size: 1.5rem;
   font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+  animation: neon-glow 1.5s infinite alternate;
 }
 .quote-btn {
-  background-color: #fbbf24; /* Amber */
-  color: #1e3a8a;
+  background-color: #f0f; /* Neon pink */
+  color: #fff;
   padding: 0.75rem 1.2rem;
   border-radius: 4px;
   text-decoration: none;
@@ -53,17 +72,19 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 0 10px #f0f, 0 0 20px #f0f;
+  transition: all 0.3s ease;
 }
 .quote-btn:hover {
-  background-color: #f59e0b;
-  transform: translateY(-2px);
+  background-color: #f0f; /* Keep neon glow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #f0f, 0 0 40px #f0f;
 }
 
-/* Navigation styles */
+/* Navigation styles with neon hover effects */
 .nav {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background-color: #111;
+  box-shadow: 0 0 10px #0ff;
 }
 .nav ul {
   display: flex;
@@ -76,38 +97,39 @@ h1 {
   display: flex;
   align-items: center;
   padding: 1rem;
-  color: #555;
+  color: #ccc;
   text-decoration: none;
-  transition: background-color 0.2s, color 0.2s;
+  transition: all 0.2s;
 }
 .nav a:hover {
-  background-color: #f3f4f6;
-  color: #1e3a8a;
+  color: #0ff;
+  background-color: #222;
+  box-shadow: inset 0 0 10px #0ff;
 }
 .nav i {
   margin-right: 0.5rem;
+  font-size: 1.2rem;
 }
 
-/* Main content styles */
+/* Main content styles with neon accents */
 .main-content {
   padding: 2rem 0;
 }
 .welcome-section {
-  background-color: #fff;
+  background: linear-gradient(45deg, #222, #333);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 0 20px #0ff;
+  text-align: center;
   position: relative;
+  animation: neon-glow 1.5s infinite alternate;
   margin-bottom: 2rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
 }
 .floating-quote-btn {
   position: absolute;
   top: -1.5rem;
   right: 1rem;
-  background-color: #10b981; /* Emerald */
+  background-color: #f0f; /* Neon pink */
   color: #fff;
   padding: 0.75rem 1.2rem;
   border-radius: 4px;
@@ -115,30 +137,31 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px #f0f, 0 0 20px #f0f;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
 }
 .floating-quote-btn:hover {
-  background-color: #059669;
-  transform: translateY(-2px);
+  background-color: #f0f;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #f0f, 0 0 40px #f0f;
 }
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #222;
-  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+  animation: neon-glow 1.5s infinite alternate;
 }
 p {
   font-size: 1rem;
-  color: #555;
-  max-width: 800px;
+  color: #ccc;
   margin: 0 auto 1.5rem;
-  text-align: center;
+  max-width: 800px;
+  line-height: 1.4;
 }
 
-/* Grid component styles */
+/* Grid styles with neon borders and hover glow */
 .home-grid-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -150,21 +173,21 @@ p {
   border-radius: 8px;
   overflow: hidden;
   aspect-ratio: 4 / 3;
-  transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
+  box-shadow: 0 0 10px #0ff inset;
+  transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s forwards;
 }
 .grid-item:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
 }
 .grid-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 .overlay {
   position: absolute;
@@ -181,6 +204,7 @@ p {
   padding: 1rem;
   color: #fff;
   text-align: center;
+  text-shadow: 0 0 3px #000;
 }
 .text-overlay h3 {
   font-size: 1.2rem;
@@ -192,42 +216,43 @@ p {
 }
 .cta-button {
   margin-top: 1rem;
-  background-color: #3b82f6; /* Blue */
+  background-color: #f0f; /* Neon pink */
   color: #fff;
   padding: 0.75rem 1.2rem;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s;
+  box-shadow: 0 0 10px #f0f, 0 0 20px #f0f;
+  transition: all 0.3s ease;
 }
 .cta-button:hover {
-  background-color: #2563eb;
+  background-color: #f0f;
+  box-shadow: 0 0 20px #f0f, 0 0 40px #f0f;
 }
 
-/* Manufacturing services section */
+/* Manufacturing services with neon glow and entrance animation */
 .manufacturing-services {
-  background-color: #fff;
+  background: linear-gradient(45deg, #222, #333);
   padding: 2rem 1rem;
   margin-top: 3rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
+  box-shadow: 0 0 20px #0ff;
+  text-align: center;
+  animation: neon-glow 1.5s infinite alternate;
 }
 .services-title {
-  text-align: center;
   margin-bottom: 2rem;
 }
 .services-title p.h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #1e3a8a;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
 }
 .services-title h2.p {
   font-size: 1rem;
-  color: #555;
+  color: #ccc;
 }
 .services_wrapper {
   display: grid;
@@ -235,47 +260,49 @@ p {
   gap: 1.5rem;
 }
 .service_item {
-  background: #f9fafb;
+  background: #222;
   padding: 1rem;
   border-radius: 8px;
-  transition: box-shadow 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  box-shadow: 0 0 10px #0ff inset;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s forwards;
-  animation-delay: 0.2s;
 }
 .service_item:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
   transform: translateY(-3px);
 }
 .service-icon {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #3b82f6;
+  color: #0ff;
+  animation: neon-glow 1.5s infinite alternate;
 }
 .service_item h3 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: #fff;
 }
 .service_item p {
   font-size: 0.95rem;
-  color: #555;
+  color: #ccc;
 }
 .service_item a {
   text-decoration: none;
-  color: #1e3a8a;
+  color: #0ff;
   font-weight: 600;
 }
 .service_item a:hover {
   text-decoration: underline;
 }
 
-/* Modal styles with fade-in animation and center positioning */
+/* Modal with neon glow and fade-in */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -286,14 +313,13 @@ p {
     transform: translateY(0);
   }
 }
-
 .modal {
-  display: flex; /* changed from none to flex for animation control */
+  display: flex;
   opacity: 0;
   pointer-events: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
   padding: 2rem;
@@ -305,16 +331,12 @@ p {
   pointer-events: auto;
 }
 .modal-content {
-  background: #fff;
+  background: #111;
   padding: 2rem;
   max-width: 600px;
   width: 90%;
   border-radius: 8px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  opacity: 0;
-  transform: translateY(-20px);
+  box-shadow: 0 0 20px #0ff;
   animation: fadeInUp 0.5s forwards;
 }
 .close {
@@ -323,24 +345,21 @@ p {
   right: 1rem;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #555;
+  color: #0ff;
   transition: color 0.2s;
 }
 .close:hover {
-  color: #000;
+  color: #fff;
 }
 .quote-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
 label {
   margin-bottom: 0.5rem;
   font-weight: 600;
+  color: #0ff;
 }
 input[type="text"],
 input[type="email"],
@@ -348,57 +367,59 @@ input[type="tel"],
 select,
 textarea {
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid #0ff;
   border-radius: 4px;
+  background: #222;
+  color: #fff;
   font-size: 1rem;
-  width: 100%;
 }
 input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  border-color: #f0f;
+  box-shadow: 0 0 10px #f0f;
 }
 .submit-btn {
-  background-color: #3b82f6;
-  color: #fff;
+  background-color: #0ff;
+  color: #111;
   padding: 0.75rem;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #0ff inset;
 }
 .submit-btn:hover {
-  background-color: #2563eb;
+  background-color: #00f;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
 }
 
-/* Footer styles */
+/* Footer styles with neon accents */
 .footer {
-  background-color: #1e3a8a;
-  color: #fff;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
   padding: 2rem 1rem;
-  margin-top: 3rem;
-}
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
+  color: #fff;
+  box-shadow: 0 0 20px #0ff;
+  animation: neon-glow 1.5s infinite alternate;
 }
 .footer h3 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  color: #fff;
 }
 .footer p {
   margin: 0.5rem 0;
   font-size: 0.95rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
@@ -425,9 +446,6 @@ textarea:focus {
   }
   .nav a {
     justify-content: center;
-  }
-  .welcome-section {
-    padding: 1.5rem;
   }
   h2 {
     font-size: 1.5rem;
