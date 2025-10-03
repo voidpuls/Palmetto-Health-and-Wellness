@@ -882,19 +882,20 @@ html {
 }
 
 /* Icon Classes - Add these if you're using custom icons */
-.icon-capsule::before { content: "💊"; }
-.icon-softgel::before { content: "🔵"; }
-.icon-tablets::before { content: "⚪"; }
-.icon-powder::before { content: "🥄"; }
-.icon-gummy::before { content: "🍬"; }
-.icon-flavor::before { content: "🌟"; }
-.icon-bodybuilding::before { content: "💪"; }
-.icon-sports::before { content: "⚡"; }
-.icon-protein::before { content: "🥤"; }
-.icon-pets::before { content: "🐕"; }
-.icon-vitamins::before { content: "💎"; }
-.icon-probiotics::before { content: "🦠"; }
-.icon-star::before { content: "⭐"; }
+/* Set all icons to a single color, e.g., #3498db (blue) */
+.icon-capsule::before { content: "💊"; color: #3498db; }
+.icon-softgel::before { content: "🔵"; color: #3498db; }
+.icon-tablets::before { content: "⚪"; color: #3498db; }
+.icon-powder::before { content: "🥄"; color: #3498db; }
+.icon-gummy::before { content: "🍬"; color: #3498db; }
+.icon-flavor::before { content: "🌟"; color: #3498db; }
+.icon-bodybuilding::before { content: "💪"; color: #3498db; }
+.icon-sports::before { content: "⚡"; color: #3498db; }
+.icon-protein::before { content: "🥤"; color: #3498db; }
+.icon-pets::before { content: "🐕"; color: #3498db; }
+.icon-vitamins::before { content: "💎"; color: #3498db; }
+.icon-probiotics::before { content: "🦠"; color: #3498db; }
+.icon-star::before { content: "⭐"; color: #3498db; }
 
 /* Service Title */
 .service_item h3 {
