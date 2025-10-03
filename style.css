@@ -852,19 +852,6 @@ html {
     border-color: #3498db;
 }
 
-/* Service Icon with Font Awesome */
-.service-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem; /* Icon size */
-    transition: all 0.3s ease;
-    color: #3498db; /* Default icon color */
-}
-
 /* Hover effect for icons */
 .service_item:hover .service-icon {
     color: #2980b9;
